@@ -18,7 +18,7 @@ var corsOptions = {
     origin: FRONTEND,
     optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 }
-app.use(cors(corsOptions));
+app.use(cors());
 app.use('/api/products',productRoute);
 app.use('/api/users',userRoute);
  app.get('/',(req,res)=>{
@@ -33,7 +33,7 @@ app.get("/blog",(req,res)=>{
 
 // console.log(req.body);
 // res.send(req.body)
-mongoose.connect(MONGO_URL)
+  mongoose.connect(MONGO_URL)
     .then(()=>{
         console.log("Connected to mongoDB")
         app.listen(PORT,()=>{

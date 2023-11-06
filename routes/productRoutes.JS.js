@@ -1,4 +1,4 @@
-// const Product = require("../models/productmodel");
+ const Product = require("../models/productmodel");
 const express = require('express');
 const router = express.Router();
 const {getProducts,getProduct,createProduct,updateProduct,deleteProduct} = require("../controller/productController")
