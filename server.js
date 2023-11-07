@@ -9,6 +9,7 @@ const MONGO_URL = process.env.MONGO_URL
 const PORT = process.env.PORT || 3000
 const FRONTEND = process.env.FRONTEND;
 const productRoute = require("./routes/productRoutes.JS")
+const bannerRoute = require("./routes/BannerRoute")
 const userRoute = require("./routes/userRoutes")
 const errorMiddleware = require("./Middleware/errorMiddleware")
 //routes
@@ -19,6 +20,7 @@ var corsOptions = {
     optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 }
 app.use(cors());
+app.use('/api/banner',bannerRoute);
 app.use('/api/products',productRoute);
 app.use('/api/users',userRoute);
  app.get('/',(req,res)=>{
