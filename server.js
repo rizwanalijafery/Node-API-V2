@@ -15,10 +15,10 @@ const errorMiddleware = require("./Middleware/errorMiddleware")
 //routes
 app.use(errorMiddleware);
 
-var corsOptions = {
-    origin: FRONTEND,
-    optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
-}
+// var corsOptions = {
+//     origin: FRONTEND,
+//     optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+// }
 app.use(cors());
 app.use('/api/banner',bannerRoute);
 app.use('/api/products',productRoute);
